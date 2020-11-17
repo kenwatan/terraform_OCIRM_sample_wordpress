@@ -1,5 +1,35 @@
 variable region {}
 variable compartment_ocid { default = "ocid1.compartment.oc1..aaaaaaaanf3vpw3dxudtgpcdzgcwsne4rytolxifp26ggybnfxngd6agejka" }
+variable mysql_shape {
+    default = "VM.Standard.E2.1"
+}  
+variable mysql_password {
+    default = "hogeHoge@Hog123"
+}
+variable ap1_ip_address {
+    default = "10.0.0.101"
+}
+variable mysql_configuration_id {
+    type = map
+    default = {
+        "VM.Standard.E2.1"    = "ocid1.mysqlconfiguration.oc1..aaaaaaaah6o6qu3gdbxnqg6aw56amnosmnaycusttaa7abyq2tdgpgubvsgi"
+        "VM.Standard.E2.2"    = "ocid1.mysqlconfiguration.oc1..aaaaaaaah6o6qu3gdbxnqg6aw56amnosmnaycusttaa7abyq2tdgpgubvsgj"
+        "VM.Standard.E2.4"    = "ocid1.mysqlconfiguration.oc1..aaaaaaaah6o6qu3gdbxnqg6aw56amnosmnaycusttaa7abyq2tdgpgubvsgk"
+        "VM.Standard.E2.8"    = "ocid1.mysqlconfiguration.oc1..aaaaaaaah6o6qu3gdbxnqg6aw56amnosmnaycusttaa7abyq2tdgpgubvsgl"
+        "VM.Standard.E3.1.8"  = "ocid1.mysqlconfiguration.oc1..aaaaaaaalwzc2a22xqm56fwjwfymixnulmbq3v77p5v4lcbb6qhkftxf2trq"
+        "VM.Standard.E3.1.16" = "ocid1.mysqlconfiguration.oc1..aaaaaaaaweky3hvms4bxw2uyf6pjcoxzf5gkqzxvxmzolgcu6bufd5bjnpyq"
+        "VM.Standard.E3.2.32" = "ocid1.mysqlconfiguration.oc1..aaaaaaaakremacvh2fizcznnja5rdxry2q4nyn27afjblyrimzjmrqblhfwa"
+        "VM.Standard.E3.4.64" = "ocid1.mysqlconfiguration.oc1..aaaaaaaam2bdlacmi4d2p33wx3aqqx5clnorpokoa6hxezz75rhw46xlj3ka"
+        "VM.Standard.E3.8.128"    = "ocid1.mysqlconfiguration.oc1..aaaaaaaa6pxyzjrtsldmu34ynebrvf4ev535qqk4foxqrblnmfr6fym5bm2q"
+        "VM.Standard.E3.16.256"   = "ocid1.mysqlconfiguration.oc1..aaaaaaaafbsxowzfzxnnvm5mmmutrfl73hs2cv7ujgs7zqnzzw7v52fvihda"
+        "VM.Standard.E3.24.384"   = "ocid1.mysqlconfiguration.oc1..aaaaaaaajeya2xmvgcwjqsuevsmgsry4frwpnfxyfpggkuff2kbh2hh2ugxq"
+        "VM.Standard.E3.32.512"   = "ocid1.mysqlconfiguration.oc1..aaaaaaaacmprv4xraedqw3zk6ls6jweiold3gsbtfigxf4xujuwq3nxaqava"
+        "VM.Standard.E3.48.768"   = "ocid1.mysqlconfiguration.oc1..aaaaaaaaep75r2j453khbhuq7kfmxnefskx4wdw5he4r7rnr75fvkrtzkf6q"
+        "VM.Standard.E3.64.1024"  = "ocid1.mysqlconfiguration.oc1..aaaaaaaalic45e2gauld2mwdpppzydow2sfkpcvecbfizkvgkhupezoi7oja"
+        "BM.Standard.E2.64"   = "ocid1.mysqlconfiguration.oc1..aaaaaaaah6o6qu3gdbxnqg6aw56amnosmnaycusttaa7abyq2tdgpgubvsgh"
+    }
+}
+
 variable export_ap1_source_image_id {
  type = map
  default = {
@@ -21,17 +51,4 @@ variable sg_dest_name {
         ap-tokyo-1 = "oci-nrt-objectstorage"
         ap-seoul-1 = "oci-icn-objectstorage"
     }
-}
-variable ap1_ip_address {
-    default = "10.0.0.101"
-}
-variable mysql_configuration_id {
-    default = "ocid1.mysqlconfiguration.oc1..aaaaaaaah6o6qu3gdbxnqg6aw56amnosmnaycusttaa7abyq2tdgpgubvsgi"
-}
-variable mysql_password {
-    default = "hogeHoge@Hog123"
-}
-
-variable mysql_shape {
-    default = "VM.Standard.E2.1"
 }

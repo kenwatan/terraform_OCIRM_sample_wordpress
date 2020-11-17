@@ -11,7 +11,7 @@ resource oci_mysql_mysql_db_system export_MySQL1 {
     window_start_time = "00:00"
   }
   compartment_id          = var.compartment_ocid
-  configuration_id        = var.mysql_configuration_id
+  configuration_id        = var.mysql_configuration_id[var.mysql_shape]
   data_storage_size_in_gb = "50"
   display_name = "MySQL1"
   fault_domain = "FAULT-DOMAIN-1"
