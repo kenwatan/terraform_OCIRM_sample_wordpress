@@ -22,7 +22,7 @@ resource oci_mysql_mysql_db_system export_MySQL1 {
 #  mysql_version = "8.0.22-u2-cloud"
   port          = "3306"
   port_x        = "33060"
-  shape_name    = "VM.Standard.E2.1"
+  shape_name    = var.mysql_shape
   state     = "ACTIVE"
   subnet_id = oci_core_subnet.export_PrivateSubnet.id
 

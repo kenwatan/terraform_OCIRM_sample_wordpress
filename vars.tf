@@ -31,3 +31,7 @@ variable mysql_configuration_id {
 variable mysql_password {
     default = "hogeHoge@Hog123"
 }
+
+variable mysql_shape {
+    default = "VM.Standard.E2.1"
+}
